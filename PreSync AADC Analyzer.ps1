@@ -108,6 +108,7 @@ Function GetAADPeople
 
     Connect-MgGraph -Scopes 'User.Read.All' #allows for authentication before running the next line. 
 
+    #Need to fix this line. 
     $AADUserProperties = get-mguser -All | Sort-Object -Property UserPrincipalName | Select-Object -Property UserPrincipalName, DisplayName, Mail
 
     Write-Host "before I leave GetAADPeople, AADUserProperties is holding this data: $AADUserProperties" -ForegroundColor Blue ##Delete this before Prod.
